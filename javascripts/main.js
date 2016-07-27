@@ -13,7 +13,7 @@ function bitsClick(number){
 };
 
 function bytesClick(number){
-    if(bytes >= bytesMax) return;
+    if(bytes >= bytesMax || bits < 8) return;
     bytes = bytes + number;
     bits = bits - 8;
     update("bits",bits);
