@@ -2,8 +2,8 @@ var bits = 0;
 var bitsMax = 8;
 var bytes = 0;
 var bytesMax = 8;
-var drives = 0;
-var driveCost = 8;
+var bitsdrives = 0;
+var bitsdriveCost = 8;
 
 function bitsClick(number){
     if(bits >= bitsMax) return;
@@ -22,12 +22,12 @@ function bytesClick(number){
     progBar("bytesbar",bytes,bytesMax);
 };
 
-function buyDrive(){
-    if(bits >= driveCost){
-        drives = drives + 1;
-        bits = bits - driveCost;
+function buybitsDrive(){
+    if(bits >= bitsdriveCost){
+        bitsdrives = bitsdrives + 1;
+        bits = bits - bitsdriveCost;
         bitsMax = bitsMax + 8;
-        update("drives",drives);
+        update("bitsdrives",bitsdrives);
         update("bits",bits);
         update("bitsMax",bitsMax);
         progBar("bitsbar",bits,bitsMax);
