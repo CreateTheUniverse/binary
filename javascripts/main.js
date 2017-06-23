@@ -14,7 +14,7 @@ function bitsClick(number){
     update("bits",bits);
     progBar("bitsbar",bits,bitsMax);
 	if(!byteunlock){
-		if(bits >= 8){
+		if(bits >= 32){
 			fadeIn("byteContainer", 10);
 			byteunlock = true;
 		};
