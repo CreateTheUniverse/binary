@@ -17,31 +17,41 @@
 
 <body>
     <div class="container">
-        <button onclick="bitsClick(1)">Bit</button>
+        <span class="button" onclick="bitsClick(1)">Bit</span>
         <p /> 
-        Bits: <span id="bits">0</span> / <span id="bitsMax">8</span>
-        <div id="myProgress">
-            <div id="bitsbar" class="progbar"></div>
-        </div>
+        Bits: <span id="bits">0</span>
         <p />
-        <button onclick="buybitsDrive()">Buy Drive</button><br /> 
-        Drives: <span id="bitsdrives">0</span><br /> 
-        Cost: <span id="bitsdriveCost">8</span><br />
     </div>
     
-    <div class="container" id="byteContainer" style="visibility: hidden">
-        <button onclick="bytesClick(1)">Convert</button>
+    <div class="container" id="byteContainer"> <!--style="visibility: hidden"--> 
+	
+        <span class="button" onclick="bytesClick(1)">Convert 8 bits to 1 Byte</span>
         <p /> 
         Bytes: <span id="bytes">0</span> / <span id="bytesMax">8</span>
         <div id="myProgress">
             <div id="bytesbar" class="progbar"></div>
         </div>
         <p />
-        <button onclick="buybytesDrive()">Buy Byte Drive</button><br /> 
-        Drives: <span id="bytesdrives">0</span><br /> 
-        Cost: <span id="bytedriveCost">8</span><br />       
+        <span onclick="buybytesDrive()" class="button">Buy Byte Drive</span><br /> 
+        Drives: <span id="bytesdrives">1</span><br /> 
+        Cost: <span id="bytedriveCost">64</span> bits<br />       
+    </div>
+	
+	<div class="container" id="kilobyteContainer"> <!--style="visibility: hidden"--> 
+        <span class="button" onclick="kilobytesClick(1)">Convert</span>
+        <p /> 
+        Bytes: <span id="kilobytes">0</span> / <span id="kilobytesMax">8</span>
+        <div id="myProgress">
+            <div id="kilobytesbar" class="progbar"></div>
+        </div>
+        <p />
+        <span onclick="buykilobytesDrive()" class="button">Buy kiloByte Drive</span><br /> 
+        Drives: <span id="kilobytesdrives">1</span><br /> 
+        Cost: <span id="kilobytedriveCost"></span> <br />       
     </div>
 
+	
+	
     <script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 
