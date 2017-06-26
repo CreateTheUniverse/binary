@@ -1,18 +1,14 @@
 var bits = 0;
-var bitsMax = 8;
 var bytes = 0;
 var bytesMax = 8;
-var bitsdrives = 0;
-var bitsdriveCost = 8;
-var bytesdrives = 0;
-var bytesdriveCost = 8;
+var bitsdrives = 1;
+var bytesdrives = 1;
+var bytesdriveCost = 64;
 var byteunlock = false;
 
 function bitsClick(number){
-    if(bits >= bitsMax) return;
     bits = bits + number;
     update("bits",bits);
-    progBar("bitsbar",bits,bitsMax);
 	if(!byteunlock){
 		if(bits >= 32){
 			fadeIn("byteContainer", 10);
@@ -25,29 +21,17 @@ function bytesClick(number){
     if(bytes >= bytesMax || bits < 8) return;
     bytes = bytes + number;
     bits = bits - 8;
-    update("bits",bits);
+	update("bits",bits);
     update("bytes",bytes);
-    progBar("bitsbar",bits,bitsMax);
     progBar("bytesbar",bytes,bytesMax);
 };
 
-function buybitsDrive(){
-    if(bits >= bitsdriveCost){
-        bitsdrives = bitsdrives + 1;
-        bits = bits - bitsdriveCost;
-        bitsMax = bitsMax + 8;
-        update("bitsdrives",bitsdrives);
-        update("bits",bits);
-        update("bitsMax",bitsMax);
-        progBar("bitsbar",bits,bitsMax);
-    }
-};
-
 function buybytesDrive(){
-    if(bytes >= bytesdriveCost){
+    if(bits >= bytesdriveCost){
         bytesdrives = bytesdrives + 1;
-        bytes = bytes - bytesdriveCost;
+        bits = bits - bytesdriveCost;
         bytesMax = bytesMax + 8;
+		update("bits",bits);
         update("bytesdrives",bytesdrives);
         update("bytes",bytes);
         update("bytesMax",bytesMax);
